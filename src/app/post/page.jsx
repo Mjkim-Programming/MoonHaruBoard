@@ -2,11 +2,23 @@
 
 import { redirect } from "next/navigation";
 import { useState } from "react"
+import Swal from "sweetalert2";
 
 export default function PostMessage() {
     const [title, setTitle] = useState("");
     const [writer, setWriter] = useState("");
     const [content, setContent] = useState("");
+
+    const Success = () => Swal.fire({
+        icon: 'success',
+        title: '메세지가 성공적으로 저장되었습니다.',
+        text: '성공!'
+    });
+    const Fail  = () => Swal.fire({
+        icon: 'error',
+        title: '메세지 저장에 실패했습니다.',
+        text: '실패!'
+    });
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -23,7 +35,7 @@ export default function PostMessage() {
             body: JSON.stringify(data)
         });
         if(response.ok){
-            alert("메세지가 성공적으로 저장되었습니다.");
+            Success();
             setTitle("");
             setWriter("");
             setContent("");
