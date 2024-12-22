@@ -15,9 +15,8 @@ export default function Home() {
     return(
         <div className="d-flex flex-column justify-content-center align-items-center" style={{height: 100+'vh'}}>
             <h1>Happy Birthday!</h1>
-            <Link href="/messages">메세지 확인하기</Link>
-            <br/>
-            <Link href="/post">메세지 남기기</Link>
+            <Link href="/messages" className="btn btn-primary mt-2">메세지 확인하기</Link>
+            <Link href="/post" className="btn btn-primary mt-2">메세지 남기기</Link>
         </div>
     )
 };
