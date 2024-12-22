@@ -1,4 +1,9 @@
 import { getMessages } from "../(fetching)/fetch";
+import type { Metadata } from "next";
+
+export const metadata:  Metadata = {
+    title: 'MoonHaruBoard',
+};
 
 export default async function Messages() {
   let data = await getMessages();

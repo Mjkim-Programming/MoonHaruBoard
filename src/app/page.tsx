@@ -1,12 +1,19 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata:  Metadata = {
+    title: 'MoonHaruBoard',
+};
 
 
 /**
- * @todo HTML Form을 이용해서 메세지 저장할 수 있도록 하기
+ * HTML Form을 이용해서 메세지 저장할 수 있도록 하기
+ * 메세지 저장 후 메세지 확인 페이지로 이동하기
+ *  메세지를 저장하는 API ROUTE 만들기
  */
 export default function Home() {
     return(
-        <div className="align-middle" style={{width: 100+'%'}}>
+        <div className="d-flex flex-column justify-content-center align-items-center" style={{height: 100+'vh'}}>
             <h1>Happy Birthday!</h1>
             <Link href="/messages">메세지 확인하기</Link>
             <br/>
